@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def show_main(request):
-    context = {
+    Items = {
         'flower_name_0': 'A Bouquet of Tulips',
         'amount_0': 3,
         'description_0': 'A tulip bouquet with a burst of vibrant elegance, blending eloquent purples and serene blues for a timeless expression of beauty.',
@@ -17,4 +17,4 @@ def show_main(request):
 
     }
 
-    return render(request, 'home.html', context)
+    return render(request, 'home.html', Items)

@@ -6,10 +6,12 @@ Link Adaptable: https://florist.adaptable.app/
 - Pertama-tama membuat repository baru dan membuat path local dan menyambungkannya pada repository yang sudah dibuat. 
 - Membuat virtual environment sebelum membuat project, menginstall semua requirements yang dibutuhkan lalu membuat Django project bernama florist [dengan command: django-admin startproject florist .]
 - Lalu membuat app main dalam project dengan command: [python manage.py startapp main] yang akan membuat path main dalam path florist. Jangan lupa memasukan 'main' ke dalam INSTALLED_APPS pada settings.py
-- Setelah itu melakukan routing dengan memasukan 
+- Setelah itu melakukan routing dengan memasukan path main pada url patterns di urls.py pada path florist.
+- Lalu mulai mengisi models dan views juga membuat template htmlnya untuk menampilkan datanya.
+- Melakukan deployment ke Adaptable.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-- 
+- ![Alt text](image.png)
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 - 
