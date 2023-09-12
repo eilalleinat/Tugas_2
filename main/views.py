@@ -15,6 +15,9 @@ def show_main(request):
         'amount_2': 7,
         'description_2': 'A sunflower bouquet bursts with the golden radiance of sunflowers, evoking joy and the warmth of sunny days in a single, vibrant arrangement.',
 
+        'nama'  :'Taniella',
+        'NPM'   :'2206082316',
+        'kelas' :'PBP-D'
     }
 
     return render(request, 'home.html', Items)
