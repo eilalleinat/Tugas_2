@@ -27,8 +27,8 @@ def show_main(request):
     items = Item.objects.all()
 
     context = {
-        'name': 'Taniella', # Your name
-        'class': 'PBP D', # Your PBP Class
+        'name': 'Taniella',
+        'class': 'PBP D', 
         'items': items
     }
 
