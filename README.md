@@ -1,14 +1,26 @@
 Nama: Taniella
 NPM: 2206082316
-Link Adaptable: https://florist.adaptable.app/main
+
+***
+## **TUGAS 3**
+***
+
+
+
+
+
+***
+## **TUGAS 2**
+***
+>Link Adaptable: https://florist.adaptable.app/main
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-- Pertama-tama membuat repository baru dan membuat path local dan menyambungkannya pada repository yang sudah dibuat. 
-- Membuat virtual environment sebelum membuat project, menginstall semua requirements yang dibutuhkan lalu membuat Django project bernama florist [dengan command: django-admin startproject florist .]
-- Lalu membuat app main dalam project dengan command: [python manage.py startapp main] yang akan membuat path main dalam path florist. Jangan lupa memasukan 'main' ke dalam INSTALLED_APPS pada settings.py
-- Setelah itu melakukan routing dengan memasukan path main pada url patterns di urls.py pada path florist.
-- Lalu mulai mengisi models dan views juga membuat template htmlnya untuk menampilkan datanya.
-- Melakukan deployment ke Adaptable.
+    - Pertama-tama membuat repository baru dan membuat path local dan menyambungkannya pada repository yang sudah dibuat. 
+    - Membuat virtual environment sebelum membuat project, menginstall semua requirements yang dibutuhkan lalu membuat Django project bernama florist [dengan command: django-admin startproject florist .]
+    - Lalu membuat app main dalam project dengan command: [python manage.py startapp main] yang akan membuat path main dalam path florist. Jangan lupa memasukan 'main' ke dalam INSTALLED_APPS pada settings.py
+    - Setelah itu melakukan routing dengan memasukan path main pada url patterns di urls.py pada path florist.
+    - Lalu mulai mengisi models dan views juga membuat template htmlnya untuk menampilkan datanya.
+    - Melakukan deployment ke Adaptable.
 
 
 
