@@ -1,17 +1,15 @@
 Nama: Taniella
 NPM: 2206082316
 
-***
 ## **TUGAS 3**
-***
 
 
 
 
 
-***
+
+---
 ## **TUGAS 2**
-***
 >Link Adaptable: https://florist.adaptable.app/main
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
