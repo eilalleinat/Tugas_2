@@ -23,7 +23,7 @@ NPM: 2206082316
 
 
 ## 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-    ![Alt text](image.png)
+![Alt text](image.png)
     * urls.py menentukan views.py dan models.py yang akan di akses untuk tampilan dari berkas html yang dijadikan response ke user.
 
 
