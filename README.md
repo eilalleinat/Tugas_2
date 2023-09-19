@@ -4,10 +4,13 @@ NPM: 2206082316
 # **TUGAS 3**
 **1. Apa perbedaan antara form POST dan GET dalam Django?**
 
-    ```POST``` mencakup semua request yang bisa menambahkan, menghapus, atau merubah keadaan server, seperti penambahan data baru pada server. Sedangkan ```GET```  sendiri merupakan command untuk mengambil dan menerima data baru dan tidak mengubah server dalam hal apapun.
+```POST``` mencakup semua request yang bisa menambahkan, menghapus, atau merubah keadaan server, seperti penambahan data baru pada server. Sedangkan ```GET```  sendiri merupakan command untuk mengambil dan menerima data baru dan tidak mengubah server dalam hal apapun.
 
+**2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?**
 
+**HTML** merupakan cara untuk menampilkan data melalui format penulisan yang sudah dibuat pada web. **XML** dan **JSON** sendiri merupakan tempat untuk penyimpanan data agar dapat diakses degnan mudah dan juga merupakan salah satu bentuk data yang diterima untuk penampilan **HTML**.
 
+Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disimpan, pada **JSON** data disimpan dalam bentuk seperti dictionary, dengan key dan value, namun **XML** menampilkan datanya seperti pohon.
 
 
 
@@ -15,7 +18,7 @@ NPM: 2206082316
 # **TUGAS 2**
 >Link Adaptable: https://florist.adaptable.app/main
 
-## 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 - Pertama-tama membuat repository baru dan membuat path local dan menyambungkannya pada repository yang sudah dibuat. 
 - Membuat virtual environment sebelum membuat project, menginstall semua requirements yang dibutuhkan lalu membuat Django project bernama florist [dengan command: django-admin startproject florist .]
 - Lalu membuat app main dalam project dengan command: [python manage.py startapp main] yang akan membuat path main dalam path florist. Jangan lupa memasukan 'main' ke dalam INSTALLED_APPS pada settings.py
