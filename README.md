@@ -2,11 +2,11 @@ Nama: Taniella \n
 NPM: 2206082316
 
 # **TUGAS 3**
-**1. Apa perbedaan antara form POST dan GET dalam Django?**
+#### 1. Apa perbedaan antara form POST dan GET dalam Django?
 
 ```POST``` mencakup semua request yang bisa menambahkan, menghapus, atau merubah keadaan server, seperti penambahan data baru pada server. Sedangkan ```GET```  sendiri merupakan command untuk mengambil dan menerima data baru dan tidak mengubah server dalam hal apapun.
 
-**2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?**
+#### 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
 
 **HTML** merupakan cara untuk menampilkan data melalui format penulisan yang sudah dibuat pada web. **XML** dan **JSON** sendiri merupakan tempat untuk penyimpanan data agar dapat diakses degnan mudah dan juga merupakan salah satu bentuk data yang diterima untuk penampilan **HTML**.
 
@@ -18,7 +18,7 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 # **TUGAS 2**
 >Link Adaptable: https://florist.adaptable.app/main
 
-### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+#### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 - Pertama-tama membuat repository baru dan membuat path local dan menyambungkannya pada repository yang sudah dibuat. 
 - Membuat virtual environment sebelum membuat project, menginstall semua requirements yang dibutuhkan lalu membuat Django project bernama florist [dengan command: django-admin startproject florist .]
 - Lalu membuat app main dalam project dengan command: [python manage.py startapp main] yang akan membuat path main dalam path florist. Jangan lupa memasukan 'main' ke dalam INSTALLED_APPS pada settings.py
@@ -26,22 +26,22 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 - Lalu mulai mengisi models dan views juga membuat template htmlnya untuk menampilkan datanya.
 - Melakukan deployment ke Adaptable.
 
-/n
+\n
 
-## 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+#### 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
  ![Alt text](image.png)
 - urls.py menentukan views.py dan models.py yang akan di akses untuk tampilan dari berkas html yang dijadikan response ke user.
 
-/n
+\n
 
-## 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+#### 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 - Dalam penggunaan Virtual Environment, kita akan lebih mudah dalam mengerjakan dengan mengisolasi proyek sehingga tidak tercampur dengan proyek-proyek lainnya. Hal ini memastikan versi yang digunakan dari tiap pustaka merupakan versi yang konsisten dan tidak berubah-ubah walau proyek dikerjakan di device yang berbeda dalam tahapan pengembangan.
 
 - Secara teori tentunya kita bisa membuat aplikasi web berbasis Django tanpa menggunakan virtual env namun hal itu akan memiliki resiko konflik dependensi dan mempersulit kolaborasi antar tim yang tidak dapat memastikan versi yang digunakan untuk tetap konstan.
 
-/n
+\n
 
-## 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+#### 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 - MVC atau Model-View-Controller adalah pola desain yang memisahkan aplikasi menjadi 3 bagian, Model untuk data dan logika, View untuk presentasi, dan Controller untuk pengendalian logika.
 
 - MVT atau Model-View-Template adalah pola desain seperti MVC yang dikemas dalam kerangka web Django, perbedaannya hanya dalam Controller yang diganti menjadi Template dan digunakan untuk pengaturan tampilan web
