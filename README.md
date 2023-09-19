@@ -2,7 +2,9 @@ Nama: Taniella \n
 NPM: 2206082316
 
 # **TUGAS 3**
-1. 
+1. Apa perbedaan antara form POST dan GET dalam Django?
+
+    ```POST```
 
 
 
