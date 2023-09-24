@@ -25,7 +25,7 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 ### Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 #### HTML
-![Alt text](Images.image-1.png)
+![Alt text](image.png)
 #### XML
 ![Alt text](image-2.png)
 #### XML by id
