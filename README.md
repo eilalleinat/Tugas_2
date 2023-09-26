@@ -1,6 +1,39 @@
 Nama: Taniella \n
 NPM: 2206082316
 
+# **TUGAS 4**
+### **1.** Apa itu Django ```UserCreationForm```, dan jelaskan apa kelebihan dan kekurangannya?
+
+```UserCreationForm``` merupakan sistem autentikasi pengguna milik Django yang digunakan untuk melakukan registrasi terhadap pengguna-pengguna baru ke dalam sistem situs web. Sistem ini menyimpan data pengguna yang telah melakukan registrasi ke dalam database dan juga dapat melakukan validasi terhadap username dan password yang di-input oleh pengguna.
+
+- Kelebihan
+UserCreationForm memungkinkan pembuatan formulir registrasi yang lengkap dengan cepat, mengintegrasikan berbagai fitur yang umumnya dibutuhkan dalam proses registrasi. Selain itu, sistem ini juga mengatasi keamanan kata sandi dengan mengukur tingkat kekuatan kata sandi dan otomatis melakukan proses hashing untuk meningkatkan keamanan.
+
+- Kekurangan
+UserCreationForm hanya menyediakan bidang (fields) standar seperti username, kata sandi, alamat email, nama depan, dan nama belakang. Untuk menambahkan fitur tambahan seperti gambar profil atau deskripsi, perlu dilakukan penyesuaian secara manual. Form ini juga memiliki keterbatasan dalam menangani validasi yang lebih kompleks, sehingga mungkin memerlukan modifikasi atau pembuatan formulir tambahan secara manual. Selain itu, untuk meningkatkan keamanan registrasi, seperti verifikasi email, pengembang perlu mengimplementasikannya secara terpisah karena tidak disediakan oleh UserCreationForm.
+
+### **2.** Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
+Dalam konteks Django, autentikasi dan otorisasi adalah dua konsep penting. Autentikasi adalah proses verifikasi identitas pengguna yang mencoba mengakses aplikasi, sementara otorisasi mengendalikan hak akses pengguna dalam aplikasi. Autentikasi memastikan bahwa hanya pengguna yang sah yang dapat masuk, sedangkan otorisasi menentukan apa yang dapat dilakukan oleh pengguna yang telah diotentikasi. Keduanya bekerja bersama untuk memberikan pengalaman pengguna yang aman dan terstruktur, melindungi data sensitif, dan mengatur tindakan yang diizinkan dalam aplikasi web.
+
+### **3.** Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+Cookies dalam konteks aplikasi web adalah data kecil yang disimpan pada perangkat pengguna oleh server web untuk berbagai tujuan, termasuk pengelolaan data sesi pengguna. Django menggunakan cookies untuk mengidentifikasi pengguna dan menyimpan data sesi mereka. Django menghasilkan *session id* untuk pengguna yang disimpan dalam cookie, yang digunakan untuk mengambil dan menyimpan data sesi seperti preferensi pengguna dan informasi login. Meskipun secara default isi sesi disimpan dalam database, Django memungkinkan konfigurasi untuk penyimpanan di lokasi lain sesuai kebutuhan.
+
+### **4.** Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+Penggunaan cookies dalam pengembangan web dapat menjadi aman jika diterapkan dengan benar, namun juga membawa potensi risiko yang harus diwaspadai. Cookies adalah alat yang berguna untuk menyimpan informasi di sisi klien dan menjaga keadaan sesi pengguna. Namun, risiko keamanan privasi menjadi perhatian utama, karena cookies dapat menyimpan data sensitif yang rentan terhadap pencurian jika tidak dienkripsi atau diatur dengan baik. Risiko Man-in-the-Middle (MitM) dan serangan Cross-Site Request Forgery (CSRF) juga harus dihadapi, serta perlu perhatian terhadap keamanan transport layer dengan selalu menggunakan HTTPS.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+1. membuat fungsi registrasi, login, logout, pada views.py
+2. melakukan import untuk kepentingan fungsi tersebut
+3. membuat html untuk register dan login, serta membuat validasi
+4. membuat 2 akun pengguna dan mengisi dummy data
+5. menyambungkan item dengan user sehingga item akun A tidak diakses akun B
+6. menampilkan detail login seperti cookies
+7. mengerjakan bonus, namun tidak increment atau decrement melainkan edit langsung data.
+
+---
 # **TUGAS 3**
 ### **1.** Apa perbedaan antara form POST dan GET dalam Django?
 
@@ -25,15 +58,15 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 ### Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 #### HTML
-![Alt text](image-1.png)
+![Alt text](images\2html.png)
 #### XML
-![Alt text](image-2.png)
+![Alt text](images\2xml.png)
 #### XML by id
-![Alt text](image-3.png)
+![Alt text](images\2xmlid.png)
 #### JSON
-![Alt text](image-4.png)
+![Alt text](images\2json.png)
 #### JSON by id
-![Alt text](image-5.png)
+![Alt text](images\2jsonid.png)
 
 ---
 # **TUGAS 2**
@@ -50,7 +83,7 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 
 ### **2.** Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
- ![Alt text](image.png)
+ ![mvt](images\1mvt.png) 
 - urls.py menentukan views.py dan models.py yang akan di akses untuk tampilan dari berkas html yang dijadikan response ke user.
 
 

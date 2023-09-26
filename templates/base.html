@@ -2,6 +2,79 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            /* Global styles */
+            body {
+                font-family: Helvetica, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }
+        
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        
+            .page-title {
+                font-size: 24px;
+                color: #333;
+                padding: 5px;
+                background-color: #a2bab2;
+                margin-bottom: 20px;
+            }
+        
+            /* User info and actions */
+            .user-info h5,
+            .user-actions h5 {
+                font-size: 18px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        
+            /* Table styles */
+            .item-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+        
+            .item-table th,
+            .item-table td {
+                border: 1px solid #000000;
+                padding: 10px;
+                text-align: center;
+            }
+        
+            .item-table th {
+                background-color: #a2bab2;
+                font-weight: bold;
+            }
+        
+            /* Button styles */
+            .btn {
+                display: inline-block;
+                font-weight: bold;
+                padding: 10px 10px;
+                background-color: #a2bab2;
+                color: #000;
+                text-decoration: none;
+                border: none;
+                border-radius: 5px;
+                margin-top: 20px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        
+            .btn:hover {
+                text-decoration: underline;
+                background-color: #758580;
+                color: #fff;
+            }
+        </style>
         <meta charset="UTF-8" />
         <meta
             name="viewport"
@@ -9,6 +82,7 @@
         />
         {% block meta %}
         {% endblock meta %}
+
     </head>
 
     <body>

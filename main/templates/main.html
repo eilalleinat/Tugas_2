@@ -1,19 +1,50 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
-<h1>Add New Product</h1>
+    <div class="container">
+        <h1 class="page-title">Florist Page</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Add Product"/>
-            </td>
-        </tr>
-    </table>
-</form>
+        <div class="user-info">
+            <h5>{{name}} - {{class}}</h5>
+            <h5>Amount of item in inventory: {{item_amount}}</h5>
+        </div>
 
-{% endblock %}
+        <table class="item-table">
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Edit</th>
+            </tr>
+
+            {% comment %} Below is how to show the item data {% endcomment %}
+
+            {% for item in items %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.date_added}}</td>
+                    <td>
+                        <a href="{% url 'main:edit_item' pk=item.pk %}" class="btn"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <div class="user-actions">
+            <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+            <a href="{% url 'main:create_item' %}" class="btn">
+                Add New Product
+            </a>
+
+            <a href="{% url 'main:logout' %}" class="btn">
+                Logout
+            </a>
+
+            
+        </div>
+    </div>
+{% endblock content %}
