@@ -58,15 +58,15 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 ### Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 #### HTML
-![Alt text](images\2html.png)
+![Alt text](Tugas_2\image\2html.png)
 #### XML
-![Alt text](images\2xml.png)
+![Alt text](Tugas_2\image\2xml.png)
 #### XML by id
-![Alt text](images\2xmlid.png)
+![Alt text](Tugas_2\image\2xmlid.png)
 #### JSON
-![Alt text](images\2json.png)
+![Alt text](Tugas_2\image\2json.png)
 #### JSON by id
-![Alt text](images\2jsonid.png)
+![Alt text](Tugas_2\image\2jsonid.png)
 
 ---
 # **TUGAS 2**
@@ -83,7 +83,7 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 
 ### **2.** Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
- ![mvt](images\1mvt.png) 
+ ![mvt](Tugas_2\images\1mvt.png) 
 - urls.py menentukan views.py dan models.py yang akan di akses untuk tampilan dari berkas html yang dijadikan response ke user.
 
 
