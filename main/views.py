@@ -80,7 +80,6 @@ def delete_item(request, id):
 
 def edit_item(request, pk):
     item = get_object_or_404(Item, pk=pk)
-
     if request.method == 'POST':
         form = ItemForm(request.POST, instance=item)
         if form.is_valid():
