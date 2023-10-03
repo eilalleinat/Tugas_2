@@ -70,6 +70,14 @@ def create_item(request):
     context = {'form': form}
     return render(request, "create_item.html", context)
 
+def delete_item(request, id):
+    # Get data berdasarkan ID
+    item = Item.objects.get(pk = id)
+    # Hapus data
+    item.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
+
 def edit_item(request, pk):
     item = get_object_or_404(Item, pk=pk)
 
