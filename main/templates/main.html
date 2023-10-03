@@ -31,7 +31,7 @@
                             <img width="15" height="auto" src="https://img.icons8.com/material-outlined/24/edit--v1.png" alt="Edit" class="btn">
                         </a>
 
-                        <a href="###">
+                        <a href=" {% url 'main:delete_item' item.id %} ">
                             <img width="15" height="auto" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="Delete" class="btn">
                         </a>
                     </td>
@@ -43,7 +43,7 @@
             <h5>Sesi terakhir login: {{ last_login }}</h5>
 
             <a href="{% url 'main:create_item' %}" class="btn">
-                Add New Product
+                Add New Item
             </a>
 
             <a href="{% url 'main:logout' %}" class="btn">
