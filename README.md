@@ -13,23 +13,23 @@
 - **Combinator Selector ( , >, +, ~)**: Selector ini digunakan untuk memilih elemen berdasarkan hubungan tertentu dengan elemen lain, seperti anak, saudara kandung, dll.
 
 ### **2.** Jelaskan HTML5 Tag yang kamu ketahui.
-- html: Tag pembuka dan penutup untuk dokumen HTML.
-- head: Mengandung metadata/informasi untuk dokumen.
-- title: Mendefinisikan judul dokumen.
-- body: Mendefinisikan tubuh dokumen.
-- h1 sampai h6: Mendefinisikan judul HTML.
-- p: Mendefinisikan paragraf.
-- br: Membuat jeda baris tunggal.
-- a: Membuat hyperlink.
-- img: Menyisipkan gambar.
-- table, tr, th, td: Digunakan untuk membuat tabel.
+- ```<html>``` : Tag pembuka dan penutup untuk dokumen HTML.
+- ```<head>``` : Mengandung metadata/informasi untuk dokumen.
+- ```<title>``` : Mendefinisikan judul dokumen.
+- ```<body>``` : Mendefinisikan tubuh dokumen.
+- ```<h1>``` sampai ```<h6>```: Mendefinisikan judul HTML.
+- ```<p>``` : Mendefinisikan paragraf.
+- ```<br>``` : Membuat jeda baris tunggal.
+- ```<a>``` : Membuat hyperlink.
+- ```<img>``` : Menyisipkan gambar.
+- ```<table>```, ```<tr>```, ```<th>```, ```<td>``` : Digunakan untuk membuat tabel.
 ##### Spesifik HTML5
-- article: Mendefinisikan konten independen dalam dokumen, seperti blog post atau artikel berita.
-- aside: Mendefinisikan konten yang sedikit terkait dengan konten halaman.
-- audio: Digunakan untuk menyematkan konten suara.
-- canvas: Digunakan untuk menggambar grafik bitmap dinamis pada saat itu juga, seperti grafik atau game.
-- nav: Digunakan untuk mendefinisikan navigasi link.
-- video: Digunakan untuk menyematkan konten video.
+- ```<article>``` : Mendefinisikan konten independen dalam dokumen, seperti blog post atau artikel berita.
+- ```<aside>``` : Mendefinisikan konten yang sedikit terkait dengan konten halaman.
+- ```<audio>``` : Digunakan untuk menyematkan konten suara.
+- ```<canvas>``` : Digunakan untuk menggambar grafik bitmap dinamis pada saat itu juga, seperti grafik atau game.
+- ```<nav>``` : Digunakan untuk mendefinisikan navigasi link.
+- ```<video>``` : Digunakan untuk menyematkan konten video.
 
 ### **3.** Jelaskan perbedaan antara margin dan padding.
 Margin adalah ruang di luar batas elemen. Margin tidak mempengaruhi ukuran elemen itu sendiri, tetapi dapat mempengaruhi tata letak keseluruhan situs web karena menambahkan ruang di sekitar elemen.
@@ -48,6 +48,9 @@ Gunakan Bootstrap jika ingin membangun situs web dengan cepat menggunakan kompon
 Gunakan Tailwind jika ingin memiliki kontrol penuh atas gaya dan tata letak dengan kombinasi class utilitas yang spesifik, atau jika ingin membangun desain yang sangat kustom sesuai kebutuhan.
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+1. menambahkan tombol delete, dengan membuat fungsinya dan routing url dan memasukkannya pada main di bagian table
+2. sebagian besar dari editan design pada tugas ini sudah saya cicil di tugas-tugas sebelumnya dengan menggunakan internal styling di head pada base.html, mengimplementasikan container dan button kemungkinan yg paling signifikan dari perubahan yang ada.
 
 ---
 # **TUGAS 4**
@@ -107,15 +110,15 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 ### Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 #### HTML
-![Alt text](images/2html.png)
+![Alt text](./images/2html.png)
 #### XML
-![Alt text](images/2xml.png)
+![Alt text](./images/2xml.png)
 #### XML by id
-![Alt text](images/2xmlid.png)
+![Alt text](./images/2xmlid.png)
 #### JSON
-![Alt text](images/2json.png)
+![Alt text](./images/2json.png)
 #### JSON by id
-![Alt text](images/2jsonid.png)
+![Alt text](./images/2jsonid.png)
 
 ---
 # **TUGAS 2**
@@ -132,7 +135,7 @@ Perbedaan dari **XML** dan **JSON** sendiri adalah bagaimana data tersebut disim
 
 
 ### **2.** Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
- ![mvt](images\1mvt.png) 
+ ![mvt](./images/1mvt.png) 
 - urls.py menentukan views.py dan models.py yang akan di akses untuk tampilan dari berkas html yang dijadikan response ke user.
 
 
