@@ -9,47 +9,175 @@
             <h5>Amount of item in inventory: {{item_amount}}</h5>
         </div>
 
-        <table class="item-table">
-            <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Description</th>
-                <th>Date Added</th>
-                <th>Edit</th>
-            </tr>
-
-            {% comment %} Below is how to show the item data {% endcomment %}
-
-            {% for item in items %}
-                <tr>
-                    <td>{{item.name}}</td>
-                    <td>{{item.amount}}</td>
-                    <td>{{item.description}}</td>
-                    <td>{{item.date_added}}</td>
-                    <td>
-                        <a href="{% url 'main:edit_item' pk=item.pk %}">
-                            <img width="15" height="auto" src="https://img.icons8.com/material-outlined/24/edit--v1.png" alt="Edit" class="btn">
-                        </a>
-                        
-                        <a href=" {% url 'main:delete_item' item.id %} ">
-                            <img width="15" height="auto" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="Delete" class="btn">
-                        </a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
+        <div class="contain-deck" id="item_deck"></div>
 
         <div class="user-actions">
             <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-            <a href="{% url 'main:create_item' %}" class="btn">
+            <a type="button" class="btn btn-primary" href="{% url 'main:create_item' %}" class="btn">
                 Add New Item
             </a>
 
-            <a href="{% url 'main:logout' %}" class="btn">
+            <a type="button" class="btn btn-primary" href="{% url 'main:logout' %}" class="btn">
                 Logout
             </a>
-         
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item by AJAX</button>
         </div>
     </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModalLabel">Edit Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Save Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    async function getItems() {
+        return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+    }
+
+    async function refreshItems() {
+        document.getElementById("item_deck").innerHTML = ""
+        const items = await getItems()
+        let htmlString = ""
+        items.forEach((item) => {
+            htmlString += `<div class="card-container">
+                <div class="card-body">
+                    <h5 class="card-title">${item.fields.name}</h5>
+                    <p class="card-text">Amount: ${item.fields.amount}</p>
+                    <p class="card-text">Description: </p>
+                    <p class="card-text">${item.fields.description} </p>
+                    <p class="card-text">Date Added: ${item.fields.date_added}</p>
+                    <button type="button" class="btn btn-danger" style="position:absolute; bottom: 10px" onclick="deleteItem(${item.pk})">
+                        <img width="15" height="auto" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="Delete"></img>
+                    </button>
+                    <button type="button" class="btn btn-primary" style="position:absolute; left:55px; bottom: 10px" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editItem(${item.pk})">
+                        <img width="15" height="auto" src="https://img.icons8.com/material-outlined/24/edit--v1.png" alt="Edit"></img>
+                    </button>
+                </div>
+            </div>` 
+        })
+        
+        document.getElementById("item_deck").innerHTML = htmlString
+    }
+
+    async function deleteItem(itemId) {
+        await fetch(`{% url 'main:delete_item_ajax' %}?id=${itemId}`, {
+            method: "DELETE",
+        })
+        refreshItems()
+    }
+    refreshItems()
+
+    async function editItem(itemId) {
+    // Get the item details
+    const item = (await getItems()).find((item) => item.pk === itemId);
+
+    // Populate a form or modal with the item details
+    // This is just an example, replace it with your actual UI code
+    document.getElementById('editName').value = item.fields.name;
+    document.getElementById('editAmount').value = item.fields.amount;
+    document.getElementById('editDescription').value = item.fields.description;
+
+    // Show the form or modal
+    // This is just an example, replace it with your actual UI code
+    document.getElementById('editModal').style.display = 'block';
+
+        // Attach an event listener to the submit button
+        document.getElementById('editSave').onclick = async function() {
+            // Get the updated details from the form
+            const name = document.getElementById('edit-name').value;
+            const amount = document.getElementById('edit-amount').value;
+            const description = document.getElementById('edit-description').value;
+
+            // Send a POST request to the server to update the item
+            const formData = new FormData();
+            formData.append('id', itemId);
+            formData.append('name', name);
+            formData.append('amount', amount);
+            formData.append('description', description);
+            await fetch("{% url 'main:edit_item_ajax' %}", {
+                method: "POST",
+                body: formData,
+            });
+
+            // Hide the form or modal and refresh the items
+            // This is just an example, replace it with your actual UI code
+            document.getElementById('editModal').style.display = 'none';
+            refreshItems();
+        };
+    }
+
+
+    function addItem() {
+        fetch("{% url 'main:add_item_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshItems)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addItem
+</script>
+
 {% endblock content %}
