@@ -19,13 +19,14 @@
             </a>
 
             <a type="button" class="btn btn-primary" href="{% url 'main:logout' %}" class="btn">
+                <img src="https://img.icons8.com/ios/50/exit--v1.png" height="24" alt="Logo" class="d-inline-block align-text-top">
                 Logout
             </a>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item by AJAX</button>
         </div>
     </div>
 
-
+    <!-- Modal untuk add item -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -58,6 +59,7 @@
         </div>
     </div>
 
+    <!-- Modal untuk edit -->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -70,21 +72,21 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name"></input>
+                            <input type="text" class="form-control" id="editName" name="name"></input>
                         </div>
                         <div class="mb-3">
                             <label for="amount" class="col-form-label">Amount:</label>
-                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                            <input type="number" class="form-control" id="editAmount" name="amount"></input>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="col-form-label">Description:</label>
-                            <textarea class="form-control" id="description" name="description"></textarea>
+                            <textarea class="form-control" id="editDescription" name="description"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Save Item</button>
+                    <button type="button" class="btn btn-primary" id="editSave" data-bs-dismiss="modal">Save Item</button>
                 </div>
             </div>
         </div>
@@ -133,21 +135,19 @@
     const item = (await getItems()).find((item) => item.pk === itemId);
 
     // Populate a form or modal with the item details
-    // This is just an example, replace it with your actual UI code
     document.getElementById('editName').value = item.fields.name;
     document.getElementById('editAmount').value = item.fields.amount;
     document.getElementById('editDescription').value = item.fields.description;
 
     // Show the form or modal
-    // This is just an example, replace it with your actual UI code
     document.getElementById('editModal').style.display = 'block';
 
         // Attach an event listener to the submit button
         document.getElementById('editSave').onclick = async function() {
             // Get the updated details from the form
-            const name = document.getElementById('edit-name').value;
-            const amount = document.getElementById('edit-amount').value;
-            const description = document.getElementById('edit-description').value;
+            const name = document.getElementById('editName').value;
+            const amount = document.getElementById('editAmount').value;
+            const description = document.getElementById('editDescription').value;
 
             // Send a POST request to the server to update the item
             const formData = new FormData();
@@ -161,7 +161,6 @@
             });
 
             // Hide the form or modal and refresh the items
-            // This is just an example, replace it with your actual UI code
             document.getElementById('editModal').style.display = 'none';
             refreshItems();
         };
