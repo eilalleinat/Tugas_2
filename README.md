@@ -1,5 +1,6 @@
 ##### Nama: Taniella 
 ##### NPM: 2206082316
+##### Link: taniella-tugas.pbp.cs.ui.ac.id
 
 # **TUGAS 6**
 ### **1.** Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
