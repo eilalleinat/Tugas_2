@@ -103,8 +103,9 @@
         document.getElementById("itemDeck").innerHTML = ""
         const items = await getItems()
         let htmlString = ""
-        items.forEach((item) => {
-            htmlString += `<div class="card-container">
+        items.forEach((item,index) => {
+            const last = index === items.length -1;
+            htmlString += `<div class="${last ? 'bg-last' : 'card-container'}">
                 <div class="card-body">
                     <h5 class="card-title">${item.fields.name}</h5>
                     <p class="card-text">Amount: ${item.fields.amount}</p>
