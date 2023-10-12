@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <div class="container">
         <h1 class="page-title">Florist Page</h1>
 
         <div class="user-info">
             <h5>{{name}} - {{class}}</h5>
-            <h5>Amount of item in inventory: {{item_amount}}</h5>
+            <!-- <h5 class="itemAmount">Amount of item in inventory: {{item_amount}}</h5> -->
+            <h5 id="itemAmount"></h5>
         </div>
 
-        <div class="contain-deck" id="item_deck"></div>
+        <div class="contain-deck" id="itemDeck"></div>
 
         <div class="user-actions">
             <h5>Sesi terakhir login: {{ last_login }}</h5>
@@ -98,7 +100,7 @@
     }
 
     async function refreshItems() {
-        document.getElementById("item_deck").innerHTML = ""
+        document.getElementById("itemDeck").innerHTML = ""
         const items = await getItems()
         let htmlString = ""
         items.forEach((item) => {
@@ -119,16 +121,30 @@
             </div>` 
         })
         
-        document.getElementById("item_deck").innerHTML = htmlString
+        document.getElementById("itemDeck").innerHTML = htmlString
+    }
+
+    async function refreshItemAmount() {
+        document.getElementById("itemAmount").innerHTML = "";
+        const items = await getItems();
+        let itemAmount = 0;
+        items.forEach((item) => {
+            itemAmount += 1;
+        });
+
+        let htmlString = `<h5>Amount of item in inventory: ${itemAmount}</h5>`;
+        document.getElementById("itemAmount").innerHTML = htmlString;
     }
 
     async function deleteItem(itemId) {
         await fetch(`{% url 'main:delete_item_ajax' %}?id=${itemId}`, {
             method: "DELETE",
         })
-        refreshItems()
+        refreshItems();
+        refreshItemAmount();
     }
-    refreshItems()
+    refreshItems();
+    refreshItemAmount();
 
     async function editItem(itemId) {
     // Get the item details
@@ -163,6 +179,7 @@
             // Hide the form or modal and refresh the items
             document.getElementById('editModal').style.display = 'none';
             refreshItems();
+            refreshItemAmount();
         };
     }
 
@@ -171,7 +188,7 @@
         fetch("{% url 'main:add_item_ajax' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#form'))
-        }).then(refreshItems)
+        }).then(refreshItems).then(refreshItemAmount)
 
         document.getElementById("form").reset()
         return false

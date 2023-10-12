@@ -1,7 +1,36 @@
 ##### Nama: Taniella 
 ##### NPM: 2206082316
 
-# **TUGAS 4**
+# **TUGAS 6**
+### **1.** Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+- Asynchronous Programming: Proses berjalan bersamaan, tidak menunggu proses lain selesai.
+- Synchronous Programming: Proses berjalan satu per satu, menunggu setiap tugas selesai sebelum lanjut ke proses berikutnya.
+
+### **2.** Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+Event driven programming adalah suatu paradigma pemrograman yang memanggil suatu event oleh aksi yang dilakukan pengguna seperti me-klik pada mouse atau menekan tombol pada keyboard. 
+
+contohnya pada kode ini adalah penekanan tombol `add item` yang akan memanggil modal untuk pengisian form item baru.
+
+### **3.** Jelaskan penerapan asynchronous programming pada AJAX.
+AJAX sendiri merupakan singkatan dari Asynchronous Javascript and XML, dimana memungkinkan aplikasi web untuk berjalan secara asynchronous, yang berarti aplikasi web dapat mengirim dan menerima data dari server tanpa harus mereload keseluruhan halaman.
+
+### **4.** Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+Fetch API dan jQuery AJAX keduanya digunakan untuk permintaan HTTP asynchronous. Fetch API adalah fitur bawaan JavaScript dan tidak memerlukan library tambahan, tetapi tidak didukung oleh beberapa browser lama. Di sisi lain, jQuery AJAX didukung oleh hampir semua browser tetapi memerlukan library jQuery. Fetch API akan tetap berjalan meskipun respons HTTP adalah error, sedangkan jQuery AJAX akan memicu callback error jika respons HTTP adalah error.
+
+menurut saya karena kita sudah menggunakan browser baru, akan lebih efisien untuk kita menggunakan Fetch API agar tidak perlu menggunakan library tambahan.
+
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+1. Mengimport bootstrap yang diperlukan dan menambahkan script serta modal dan menambahkan fungsi untuk get item by JSON dan add item dari AJAX
+2. Menambahkan fitur untuk menampilkan amount dan card secara asynchronous dalam script
+3. Mengubah display table menjadi card
+4. Menambahkan fitur delete dan edit menggunakan AJAX
+5. Melakukan perintah `collecstatic`
+
+
+# **TUGAS 5**
 ### **1.** Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 - **Universal Selector (*)**: Selector ini digunakan untuk memilih semua elemen HTML yang ada di halaman web.
 - **Element Type Selector (element)**: Selector ini menggunakan tag HTML untuk memilih semua elemen dengan tag tersebut.
