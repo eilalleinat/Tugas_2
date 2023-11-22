@@ -24,4 +24,6 @@ urlpatterns = [
     path('create-item-ajax/', add_item_ajax, name='add_item_ajax'),
     path('delete_item_ajax/', delete_item_ajax, name='delete_item_ajax'),
     path('edit_item_ajax/', edit_item_ajax, name='edit_item_ajax'),
+
+    path('create-flutter/', create_product_flutter, name='create_product_flutter'),
 ]
